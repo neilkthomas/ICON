@@ -78,8 +78,8 @@ List of peripherals
 
 
 
-# INPUT & OUTPUT PIN, MODULE details of Freedom K64 Board
-#######################################################
+# Input and output pins used in Freedom K64 Board for ICON
+###########################################################
 
 Module  & PINS
 * CHN1      ADC1_SE18
