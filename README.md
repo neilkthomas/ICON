@@ -3,7 +3,7 @@
 Low cost industrial controller with multiple programable input, output channels.
 
 
-Features:-
+# Features:-
 #############################################################
 •3 Input Channels(Analog/Digital)
 •2 Output Channels(Analog)
@@ -13,20 +13,20 @@ Features:-
 •Status Monitoring Web page
 
 
-Implementation:-
+# Implementation:-
 #############################################################
 ICON Firmware implemented using Freescale MQX RTOS and TCP/IP LWIP Stack.
 Source code organisation:-
+|-source              // Contains ICON specific source code implementation. Which manages tasks,device driver configuration, IO read &write 
+|-include             // Headers files of ICON source files 
+|-web                 // Status web page 
+|-json-parser         // 3rd Party Json library 
+|-board               // Board specific hardware/peripherals configurations 
+|-config_cli_app_test // ICON COnfig CLI App 
 
-|-source   			  /* Contains ICON specific source code implementation, which manages tasks */
-|          			  /* Device driver configuration, IO read &write */
-|-include 			  /* Headers files of ICON source files */
-|-web     			  /* Status web page */
-|-json-parser 		  /* 3rd Party Json library */
-|-board        		  /* Board specific hardware/peripherals configurations */		   
-|-config_cli_app_test /* ICON COnfig CLI App */
 
-Peripherals/Modules:-
+
+# Peripherals/Modules:-
 #############################################################
 * GPIO'S
 * 16 BIT ADC
@@ -37,11 +37,11 @@ Peripherals/Modules:-
 * WATCHDOG
 
 
-Software Architecture & Communication
+# Software Architecture & Communication
 #############################################################
 
-    |=====================================|         |============================|    |=====================================|
-	|      		   MAIN TASK 	          |         |     SYSTEM HEALTH TASK 	 |    |      	    IO MANAGE TASK 	        |
+        |=====================================|         |============================|    |=====================================|
+	|      		   MAIN TASK 	      |         |     SYSTEM HEALTH TASK     |    |      	    IO MANAGE TASK 	|
 	|=====================================|	        |============================|    |=====================================|
 	| |=========| |=========| |=========| |	1 EVENT | |=========|  |=========|   |    | |=========| |=========| |=========| |
 	| | CONFIG  | | MODBUS  | |   WEB   |-|---------|-| WATCHDOG|  |  HEART  |   |    | |   GPIO  | |   ADC   | |  PWM    | |
@@ -50,32 +50,32 @@ Software Architecture & Communication
 	| |         | |         |-|---------|-|---------|-| THRIGGER|  |=========|   |    | |         | |         | |         | |
 	| |         |-|---------|-|---------|-|---------|-|         |----------------|----| |         | |         | |         | |
 	| |=========| |=========| |=========| | 3 EVENT | |=========|  4 EVENT (IO)  |    | |=========| |=========| |=========| |
-	|         ^        ^          ^       |    	    |         ^                  |    |         ^        ^          ^       |
+	|         ^        ^          ^       |    	|         ^                  |    |         ^        ^          ^       |
 	|         |        |          |       |         |         |                  |    |         |        |          |       |
 	|         |        |          |       |         |         |                  |    |         |        |          |       |
 	|      ++++++++++++++++++++++++++     |         | ++++++++++++++++++++++++++ |    |      ++++++++++++++++++++++++++     |
 	|      |  ICON DATA STRCUCTURE  |     |         | |  TASK STATE STRCUCTURE | |    |      |  IO DATA STRCUCTURE    |     |
-    |	   |++++++++++++++++++++++++|     |         | |++++++++++++++++++++++++| |    |	     |++++++++++++++++++++++++|     |
+        |      |++++++++++++++++++++++++|     |         | |++++++++++++++++++++++++| |    |	 |++++++++++++++++++++++++|     |
 	|      | ipchannelname          |     |         | | TASK NAME              | |    |      | ipchannelname          |     |
 	|      | ipunit                 |     |         | | TASK ID                | |    |      | ipunit                 |     |
-	| 	   | pvvalue                |     |         | | TASK STATE             | |    | 	 | pvvalue                |     |
+	|      | pvvalue                |     |         | | TASK STATE             | |    | 	 | pvvalue                |     |
 	|      | dgipstat               |     |         | | WATCH RESTART TRIGGERED| |    |      | dgipstat               |     |
 	|      | opchannelname          |     |         | | TIME                   | |    |      | opchannelname          |     |
 	|      | opunit                 |     |         | |                        | |    |      | opunit                 |     |
 	|      | setpoint               |     |         | |                        | |    |      | setpoint               |     |
 	|      | dgopstat               |     |         | |                        | |    |      | dgopstat               |     |
-	|	   |++++++++++++++++++++++++|     |         | |++++++++++++++++++++++++| |    |	     |++++++++++++++++++++++++|     |
-    |=====================================|         |============================|    |=====================================|
+	|      |++++++++++++++++++++++++|     |         | |++++++++++++++++++++++++| |    |	 |++++++++++++++++++++++++|     |
+        |=====================================|         |============================|    |=====================================|
                               ||      ||                                                ||   ||
-							  ||	  || MESSAGE QUEUE - IO CONTROL DATA TO IO TASK     ||   ||
-							  ||	   ==================================================	 || 
-							  ||			                                                 ||
-							  ||	MESSAGE QUEUE - REDA IO DATA FROM IO TASK                ||
-							   ===============================================================
+			      ||      || MESSAGE QUEUE - IO CONTROL DATA TO IO TASK     ||   ||
+			      ||       ==================================================    || 
+			      ||			                                     ||
+			      ||	MESSAGE QUEUE - REDA IO DATA FROM IO TASK            ||
+			       ===============================================================
 	
 	
 	
-INPUT & OUTPUT PIN, MODULE details of Freedom K64 Board
+# Input & Output pins used in Freedom K64 Board for ICON
 #######################################################
 Module   PIN
    CHN1  ADC1_SE18
@@ -88,7 +88,7 @@ Module   PIN
 
 
 
-Testing:-
+# Testing:-
 #############################################################
 1) Configure static IP in icon_common.h (IP_ADS_x)
 2) Open web browser and enter IP address of ICON. Refresh the web page to see the updates.
@@ -97,7 +97,7 @@ Testing:-
 3) Install python 2.7 to run ICON CLI Config App.
    Ex:  python cli.py LGN  
 
-$ python cli.py LGN
+$ python cli.py SGN
 
 ICon - Command Line Configuration App
 =====================================
