@@ -15,15 +15,17 @@ Low cost industrial controller with multiple programable input, output channels.
 
 # Implementation:-
 #############################################################
-ICON Firmware implemented using Freescale MQX RTOS and TCP/IP LWIP Stack.
-Source code organisation:-
-|-source              // Contains ICON specific source code implementation. Which manages tasks,device driver configuration, IO read &write 
-|-include             // Headers files of ICON source files 
-|-web                 // Status web page 
-|-json-parser         // 3rd Party Json library 
-|-board               // Board specific hardware/peripherals configurations 
-|-config_cli_app_test // ICON COnfig CLI App 
-
+* ICON Firmware implemented using Freescale MQX RTOS and TCP/IP LWIP Stack.
+-------------------------------------------------------------- 
+        Source code organisation given below
+	|
+	|-source              // Contains ICON specific source code implementation. Which manages tasks,device driver configuration, IO read &write 
+	|-include             // Headers files of ICON source files 
+	|-web                 // Status web page 
+	|-json-parser         // 3rd Party Json library 
+	|-board               // Board specific hardware/peripherals configurations 
+	|-config_cli_app_test // ICON COnfig CLI App 
+--------------------------------------------------------------
 
 
 # Peripherals/Modules:-
@@ -86,7 +88,7 @@ Module  & PINS
 * PWM1      PTC4
 * PWM2      PTC2
 * THM1      ADC0_SE12 // To be done
-* THM2      ADC0_SE13 //  to be done
+* THM2      ADC0_SE13 // To be done
 
 
 # Testing:-
