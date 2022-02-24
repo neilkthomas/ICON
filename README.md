@@ -64,7 +64,7 @@ List of peripherals
     |      | ipchannelname          |     |         | | TASK NAME              | |    |      | ipchannelname          |     |
     |      | ipunit                 |     |         | | TASK ID                | |    |      | ipunit                 |     |
     |      | pvvalue                |     |         | | TASK STATE             | |    |      | pvvalue                |     |
-    |      | dgipstat               |     |         | | WATCH RESTART TRIGGERED| |    |      | dgipstat               |     |
+    |      | dgipstat               |     |         | | WATCHDOG  TRIGGERED    | |    |      | dgipstat               |     |
     |      | opchannelname          |     |         | | TIME                   | |    |      | opchannelname          |     |
     |      | opunit                 |     |         | |                        | |    |      | opunit                 |     |
     |      | setpoint               |     |         | |                        | |    |      | setpoint               |     |
@@ -130,10 +130,12 @@ Save:     {"Index": 11112,"MAC Address": "00:CF:52:35:00:03","Date & Time": "202
 	$ python cli.py SINP
 SINP
 Save:     {"Index":11931,"InputList":[{"ChannelNo":"1","Name":"5V CHN1","Type":"5V-Analog","Min":"0.00","Max":"5.00","Offset":"0.00","Unit":"V"},{"ChannelNo":"2","Name":"5v CHN2","Type":"5V-Analog","Min":"0.00","Max":"5.00","Offset":"0.00","Unit":"V"},{"ChannelNo":"3","Name":"5V CHN3","Type":"5V-Analog","Min":"0.00","Max":"5.00","Offset":"0.00","Unit":"V"}]}
+
 {"Index":11931,"InputList":[{"ChannelNo":"1","Name":"5V CHN1","Type":"NA","Min":"0.00","Max":"5.00","Offset":"0.00","Unit":"V"},{"ChannelNo":"2","Name":"5v CHN2","Type":"NA","Min":"0.00","Max":"5.00","Offset":"0.00","Unit":"V"},{"ChannelNo":"3","Name":"5V CHN3","Type":"NA","Min":"0.00","Max":"5.00","Offset":"0.00","Unit":"V"}]}
 
 	$ python cli.py SOUT
 SOUT
 Save:     {"Index":11941,"OutputList":[{"ChannelNo":"1","Name":"5V CHN1","Type":"5V-Analog","Logic":"Direct","Unit":"V","Setpoint":"20.00"},{"ChannelNo":"2","Name":"5V CHN2","Type":"5V-Analog","Logic":"Direct","Unit":"V","Setpoint":"80.00"},{"ChannelNo":"3","Name":"Green Relay","Type":"Digital","Logic":"Direct","Unit":"V","Setpoint":"1.00"},{"ChannelNo":"4","Name":"Red Relay","Type":"Digital","Logic":"Direct","Unit":"V","Setpoint":"0.00"}]}
+
  {"Index":11941,"OutputList":[{"ChannelNo":"1","Name":"5V CHN1","Type":"NA","Logic":"Direct","Unit":"V","Setpoint":"20.00"},{"ChannelNo":"2","Name":"5V CHN2","Type":"NA","Logic":"Direct","Unit":"V","Setpoint":"80.00"},{"ChannelNo":"3","Name":"Green Relay","Type":"Digital","Logic":"Direct","Unit":"V","Setpoint":"1.00"},{"ChannelNo":"4","Name":"Red Relay","Type":"Digital","Logic":"Direct","Unit":"V","Setpoint":"0.00"}]}
 		  
