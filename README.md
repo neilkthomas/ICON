@@ -33,12 +33,13 @@ Low cost industrial controller with multiple programable input, output channels.
 
 List of peripherals
 * GPIO'S
-* 16 BIT ADC
+* ADC (16 BIT) 
 * FTM  (PWM)
 * ETHERNET
 * RTC
 * DEBUG UART
 * WATCHDOG
+* FPU (Floating point unit)
 
 
 # Software Architecture & Communication
@@ -88,6 +89,7 @@ Module  & PINS
 * CHN3      PTB 11/ADC1_SE15
 * PWM1      PTC4
 * PWM2      PTC2
+* On board tricolor LED's ( Red & Green Led Pins - Relay outs, Blue Led as Heart beat led(alive indication))
 * THM1      ADC0_SE12 // To be done
 * THM2      ADC0_SE13 // To be done
 
