@@ -16,7 +16,7 @@ Low cost industrial controller with multiple programable input, output channels.
 # Implementation:-
 #############################################################
 * ICON Firmware implemented using Freescale MQX RTOS and TCP/IP LWIP Stack.
-* Freescale Kinetice development studio used for the development.
+* Freescale Kinetis Design Studio (KDS IDE) used for the development.
 * SDK - KSDK_1.2.0, MXQ RTOS 4.x
 * Example tcpecho_rtos ( C:\Freescale\KSDK_1.2.0\examples\frdmk64f\demo_apps\lwip\lwip_tcpecho_demo\tcpecho_rtos )  used as reference.
 -------------------------------------------------------------- 
