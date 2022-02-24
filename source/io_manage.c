@@ -117,7 +117,7 @@ void io_manage_task(uint32_t param)
     while(1)
     {
 
-    	/*********************/
+    	/******* Message Queue to receive ICON DS from Main Task ********/
 
         msg_ptr = _msgq_receive(server_qid, 0);
 
@@ -134,7 +134,7 @@ void io_manage_task(uint32_t param)
             /**********************************************************/
         }
 
-        /*****************************/
+        /******End Message Queue to receive ICON DS from Main Task ******/
 
 
         adc_thm1=0;
@@ -268,7 +268,7 @@ void io_manage_task(uint32_t param)
             io_task_ds.outputCard[2].dgopstat=(int8_t)GPIO_DRV_ReadPinInput(kGpioLED1);
             io_task_ds.outputCard[3].dgopstat=(int8_t)GPIO_DRV_ReadPinInput(kGpioLED2);
 
-            /****************************/
+            /*********** Message Queue to send IO DS to Main Task *****/
 
             /** Copying IO Task DS structure to Message Queue payload **/
             if (_mutex_lock(&io_ds_mutex) != MQX_OK) {
@@ -287,7 +287,7 @@ void io_manage_task(uint32_t param)
                printf("\nCould not send a message\n");
             }
 
-        	/****************************/
+        	/********* End Message Queue to send IO DS to Main Task ******/
 
 
         /* Let the other task run */
