@@ -125,7 +125,9 @@ connection close 1
 					  
 	$ python cli.py SGN
 SGN
-Save:     {"Index": 11112,"MAC Address": "00:CF:52:35:00:03","Date & Time": "2022-02-06 17:16:00","Firmware Version": "Icon.02.22","Device Name": "Icon"}{"Index":11112,"MAC Address":"00:CF:52:35:00:03","Date & Time":"2022-02-06 17:16:00","Firmware Version":"Icon.02.22","Device Name":"Icon"}
+Save:     {"Index": 11112,"MAC Address": "00:CF:52:35:00:03","Date & Time": "2022-02-06 17:16:00","Firmware Version": "Icon.02.22","Device Name": "Icon"}
+
+{"Index":11112,"MAC Address":"00:CF:52:35:00:03","Date & Time":"2022-02-06 17:16:00","Firmware Version":"Icon.02.22","Device Name":"Icon"}
 
 	$ python cli.py SINP
 SINP
