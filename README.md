@@ -64,11 +64,11 @@ List of peripherals
     |      ++++++++++++++++++++++++++     |         | ++++++++++++++++++++++++++ |    |      ++++++++++++++++++++++++++     |
     |      |  ICON DATA STRCUCTURE  |     |         | |  TASK STATE STRCUCTURE | |    |      |  IO DATA STRCUCTURE    |     |
     |      |++++++++++++++++++++++++|     |         | |++++++++++++++++++++++++| |    |      |++++++++++++++++++++++++|     |
-    |      | ipchannelname          |     |         | | TASK NAME              | |    |      | ipchannelname          |     |
-    |      | ipunit                 |     |         | | TASK ID                | |    |      | ipunit                 |     |
-    |      | pvvalue                |     |         | | TASK STATE             | |    |      | pvvalue                |     |
-    |      | dgipstat               |     |         | | WATCHDOG  TRIGGERED    | |    |      | dgipstat               |     |
-    |      | opchannelname          |     |         | | TIME                   | |    |      | opchannelname          |     |
+    |      | ipchannelname          |     |         | | task_name              | |    |      | ipchannelname          |     |
+    |      | ipunit                 |     |         | | task_id                | |    |      | ipunit                 |     |
+    |      | pvvalue                |     |         | | tast_state             | |    |      | pvvalue                |     |
+    |      | dgipstat               |     |         | | is_watchdog_triggered  | |    |      | dgipstat               |     |
+    |      | opchannelname          |     |         | | time                   | |    |      | opchannelname          |     |
     |      | opunit                 |     |         | |                        | |    |      | opunit                 |     |
     |      | setpoint               |     |         | |                        | |    |      | setpoint               |     |
     |      | dgopstat               |     |         | |                        | |    |      | dgopstat               |     |
