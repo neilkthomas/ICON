@@ -30,6 +30,7 @@ Low cost industrial controller with multiple programable input, output channels.
 
 # Peripherals/Modules:-
 #############################################################
+
 List of peripherals
 * GPIO'S
 * 16 BIT ADC
