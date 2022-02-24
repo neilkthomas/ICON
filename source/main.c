@@ -101,7 +101,7 @@ int main(void)
        printf("\nCould not open a client message queue\n");
     }
 
-    /**********************/
+    /*********************** End message queue creation **********************************/
 
     MUTEX_ATTR_STRUCT mutexattr;
 
@@ -178,11 +178,18 @@ int main(void)
         _mutex_unlock(&main_ds_mutex);
         /**********************************************************/
 
+        /** Message queue to send ICON DS output control data to IO Task **/
+
         result = _msgq_send(msg_ptr);
 
         if (result != TRUE) {
            printf("\nCould not send a message\n");
         }
+
+        /**End  Message queue to send ICON DS output control data to IO Task **/
+
+
+        /** Message queue to receive IO DS input data to Main Task **/
 
         /* wait for a return message */
         msg_ptr = _msgq_receive(client_qid, 0);
@@ -200,8 +207,7 @@ int main(void)
             /**********************************************************/
         }
 
-        /* free the message */
-       //_msg_free(msg_ptr);
+        /** End Message queue to receive IO DS input data to Main Task **/
 
         _time_delay(1);
     }
