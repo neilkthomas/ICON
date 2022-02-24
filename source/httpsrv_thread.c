@@ -41,7 +41,7 @@ void handle_request(struct netconn *conn, const char *buf_in)
 
     if (index_address(buf_in, "GET /"))
     {
-        // Header first.
+        /* Header first. */
         netconn_write(conn, http_html_hdr, sizeof(http_html_hdr)-1, NETCONN_NOCOPY);
         if (index_address(buf_in, "GET / "))
         {
@@ -56,23 +56,23 @@ void handle_request(struct netconn *conn, const char *buf_in)
 
               for(nIndex = 0; nIndex < LOOP_NO; ++nIndex)
               {
-                     sprintf(temp,"CHN%d," , nIndex + 1);  //channel
+                     sprintf(temp,"CHN%d," , nIndex + 1);
                      strcat(ptr,temp);
-                     sprintf(temp,"%s," , main_task_ds.inputCard[nIndex].ipchannelname);  //name  main_task_ds.inputCard[0].ipchannelname
+                     sprintf(temp,"%s," , main_task_ds.inputCard[nIndex].ipchannelname);
                      strcat(ptr,temp);
 
                      if(DIGITAL == main_task_ds.inputCard[nIndex].iptype)
                      {
-                      sprintf(temp,"%d," , main_task_ds.inputCard[nIndex].dgipstat);  //Status main_task_ds.inputCard[0].pvvalue
+                      sprintf(temp,"%d," , main_task_ds.inputCard[nIndex].dgipstat);
                       strcat(ptr,temp);
                      }
                      else
                      {
-                      sprintf(temp,"%0.2f," , main_task_ds.inputCard[nIndex].pvvalue);  //Status main_task_ds.inputCard[0].pvvalue
+                      sprintf(temp,"%0.2f," , main_task_ds.inputCard[nIndex].pvvalue);
                       strcat(ptr,temp);
                      }
 
-                     sprintf(temp,"%s," , main_task_ds.inputCard[nIndex].ipunit);  //Unit     main_task_ds.inputCard[0].ipunit
+                     sprintf(temp,"%s," , main_task_ds.inputCard[nIndex].ipunit);
                      strcat(ptr,temp);
 
 
@@ -119,7 +119,7 @@ void handle_request(struct netconn *conn, const char *buf_in)
 
               for(nIndex = 0; nIndex < 2; ++nIndex)
               {
-                  sprintf(temp,"CHN%d," , nIndex + 1);  //channel
+                  sprintf(temp,"CHN%d," , nIndex + 1);
                   strcat(ptr,temp);
                   sprintf(temp,"%s," , main_task_ds.outputCard[nIndex].opchannelname);
 
@@ -173,7 +173,7 @@ void handle_request(struct netconn *conn, const char *buf_in)
               strcat(ptr,temp);
               for(nIndex = 2; nIndex < 4; ++nIndex)
               {
-                  sprintf(temp,"CHN%d," , nIndex + 1);  //channel
+                  sprintf(temp,"CHN%d," , nIndex + 1);
                   strcat(ptr,temp);
 
                   sprintf(temp,"%s," , main_task_ds.outputCard[nIndex].opchannelname);
@@ -206,7 +206,8 @@ void handle_request(struct netconn *conn, const char *buf_in)
               sprintf(temp,"%s" , "^");
               strcat(ptr,temp);
 
-  #ifndef counter
+  /* Counter not implemented, empty data */
+  #ifndef CONUTER
 
               for(nIndex = 0; nIndex < MAX_COUNTER1_NUMBER; ++nIndex)
               {
@@ -225,8 +226,8 @@ void handle_request(struct netconn *conn, const char *buf_in)
               sprintf(temp,"%s" , "^");
               strcat(ptr,temp);
 
-
-  #ifndef  timer
+ /* Timer not implemented, empty data */
+  #ifndef  TIMER
               for(nIndex = 0; nIndex < MAX_TIMER_NUMBER; ++nIndex)
               {
 
