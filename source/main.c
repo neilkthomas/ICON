@@ -157,13 +157,14 @@ int main(void)
 
     /*allocate a message*/
     msg_ptr = (SERVER_MESSAGE_PTR)_msg_alloc(message_pool);
+    if (msg_ptr == NULL) {
+       printf("\nCould not allocate a message\n");
+    }
 
     while(1)
     {
 
-        if (msg_ptr == NULL) {
-           printf("\nCould not allocate a message\n");
-        }
+
 
         msg_ptr->HEADER.SOURCE_QID = client_qid;
         msg_ptr->HEADER.TARGET_QID = _msgq_get_id(0, SERVER_QUEUE);
