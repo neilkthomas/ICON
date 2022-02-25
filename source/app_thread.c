@@ -451,7 +451,7 @@ void application_thread(void *arg)
                         /* Load input settings */
                         case LINP:
                         {
-                            load_input_array(newconn,err,11930, str, temp);
+                            load_input_array(newconn,err,LINP, str, temp);
                         }
                         break;
                         /* Save input settings */
@@ -459,13 +459,13 @@ void application_thread(void *arg)
                         {
                             pstValueNode = get_value_node("InputList" , pstJsonRootNode);
                             process_input_array(pstValueNode);
-                            load_input_array(newconn,err,11931, str, temp);
+                            load_input_array(newconn,err,SINP, str, temp);
                         }
                         break;
                         /* Load output settings */
                         case LOUT:
                         {
-                            load_output_array(newconn,err,11940, str, temp);
+                            load_output_array(newconn,err,LOUT, str, temp);
                         }
                         break;
                         /* Save output settings */
@@ -473,7 +473,7 @@ void application_thread(void *arg)
                         {
                             pstValueNode = get_value_node("OutputList" , pstJsonRootNode);
                             process_output_array(pstValueNode);
-                            load_output_array(newconn,err,11941, str, temp);
+                            load_output_array(newconn,err,SOUT, str, temp);
                         }
                         break;
 
